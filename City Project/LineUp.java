@@ -11,7 +11,7 @@
     import java.awt.Graphics2D;
     import javax.swing.JComponent;
 
-public class LineUp extends JComponent //implements Runnable
+public class  extends JComponent //implements Runnable
 {
    private final int APPLET_WIDTH = 400;    //Size constants
    private final int APPLET_HEIGHT = 150;
@@ -22,7 +22,7 @@ public class LineUp extends JComponent //implements Runnable
 
    //private StickFigure2 figure1 = new StickFigure2(100,150,Color.red,120);
    private StickFigure figure1,figure2, figure3, figure4;                               
-   private Hills ground;
+   private Floor ground;
    private int running = 0;
 
    //-----------------------------------------------------------------
@@ -36,15 +36,6 @@ public class LineUp extends JComponent //implements Runnable
       h2 = HEIGHT_MIN + generator.nextInt(VARIANCE);
       h3 = HEIGHT_MIN + generator.nextInt(VARIANCE);
       h4 = HEIGHT_MIN + generator.nextInt(VARIANCE);
-
-            
-      figure1 = new StickFigure (400, 150, Color.red, h1);
-      //x, y, color, height
-      figure2 = new StickFigure(100, 240, Color.green, h2);
-      figure3 = new StickFigure(200, 150, Color.cyan, h3);
-      figure4 = new StickFigure(250, 150, Color.yellow, h4);
-
-      ground = new Hills();
 
       Thread t1 = new Thread(ground);
       t1.start();
@@ -68,20 +59,54 @@ public class LineUp extends JComponent //implements Runnable
    public void paintComponent(Graphics g)
     {
         Graphics2D page = (Graphics2D) g;
+       //page = this.page;
       ground.draw(page);
       figure1.draw (page);
       figure2.draw (page);
       figure3.draw (page);
       figure4.draw (page);
+      //ground.draw(page);
+
+      //Thread t1 = new Thread(ground);
+      //t1.start();
+
+      /*
+      int newHeight = HEIGHT_MIN + generator.nextInt(VARIANCE);
+      figure1.setHeight(newHeight);
+      newHeight = HEIGHT_MIN + generator.nextInt(VARIANCE);
+      figure2.setHeight(newHeight);
+      newHeight = HEIGHT_MIN + generator.nextInt(VARIANCE);
+      figure3.setHeight(newHeight);
+      newHeight = HEIGHT_MIN + generator.nextInt(VARIANCE);
+      figure4.setHeight(newHeight);
+      */
+      //try{
+          //pause program for quarter-sec (in miliseconds)
+          //Thread.sleep(250);
+        //}
+      //catch(InterruptedException e){}
+
+      //figure1.draw(page);
+
+      //repaint(); //IMPORTANT LINE
    }
 
    public void nextFrame()
    {
+       //figure1.setHeight(HEIGHT_MIN + generator.nextInt(VARIANCE));
+       //figure2.setHeight(HEIGHT_MIN + generator.nextInt(VARIANCE));
+       //figure3.setHeight(HEIGHT_MIN + generator.nextInt(VARIANCE));
+       //figure4.setHeight(HEIGHT_MIN + generator.nextInt(VARIANCE));
+       //running ++;
+       //ground.setX(running);
+       //Thread t1 = new Thread(ground);
+       //t1.start();
+
        repaint();
 
    }
 
    public void run()
    {
-   }
+    }
 }

@@ -13,7 +13,7 @@ public class CityscapeComponent extends JComponent
 {
     // define the objects in your Cityscape as instance variables
     // ...
-    
+    SunMoon planet = new SunMoon();
     
     
     // define the CityscapeComponent contructor and intiailize all instance variables
@@ -34,8 +34,7 @@ public class CityscapeComponent extends JComponent
         
         // invoke the draw method on each object in your Cityscape
         // ...
-        
-        
+        planet.drawSun(g2);
     }
     
     /**
@@ -47,7 +46,7 @@ public class CityscapeComponent extends JComponent
     {
         // update the objects in the cityscape so they are animated
         // ...
-        
+        planet.nextFrame();
         
         
         // request that the Java Runtime repaints this component by invoking its paintComponent method

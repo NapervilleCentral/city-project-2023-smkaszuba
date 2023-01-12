@@ -23,7 +23,7 @@ public class CityscapeViewer
         // create and configure the frame (window) for the program
         JFrame frame = new JFrame();
         
-        frame.setSize(400 /* x */, 300 /* y */);
+        frame.setSize(300 /* x */, 200 /* y */);
         frame.setTitle("Cityscape");
         frame.setBackground(Color.red);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -36,9 +36,9 @@ public class CityscapeViewer
         CityscapeComponent component = new CityscapeComponent();
         
         
-        
-        frame.add(component);
-        
+        LineUp row = new LineUp();
+        //frame.add(component);
+        frame.add(row);
         
         
         // make the frame visible which will result in the paintComponent method being invoked on the
