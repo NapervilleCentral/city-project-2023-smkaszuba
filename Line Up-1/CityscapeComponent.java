@@ -1,7 +1,6 @@
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import javax.swing.JComponent;
-
 /**
  * Class that creates instances of the classes that comprise the cityscape and delegates drawing the
  *  cityscape to these object.
@@ -14,7 +13,7 @@ public class CityscapeComponent extends JComponent
     // define the objects in your Cityscape as instance variables
     // ...
     SunMoon planet = new SunMoon();
-    
+    Background background = new Background();
     
     // define the CityscapeComponent contructor and intiailize all instance variables
     // ...
@@ -34,7 +33,9 @@ public class CityscapeComponent extends JComponent
         
         // invoke the draw method on each object in your Cityscape
         // ...
+        background.drawBackground(g2);
         planet.drawSun(g2);
+       
     }
     
     /**
@@ -47,6 +48,7 @@ public class CityscapeComponent extends JComponent
         // update the objects in the cityscape so they are animated
         // ...
         planet.nextFrame();
+        background.nextFrame();
         
         
         // request that the Java Runtime repaints this component by invoking its paintComponent method

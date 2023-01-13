@@ -10,7 +10,7 @@ import java.awt.*;
 public class CityscapeViewer
 {
     // the cityscape will be animated for 60 seconds
-    static final int ANIMATION_TIME_IN_SECONDS = 180;
+    static final int ANIMATION_TIME_IN_SECONDS = 1000;
    
     /**
      * main method for the program which creates and configures the frame for the program
@@ -23,9 +23,9 @@ public class CityscapeViewer
         // create and configure the frame (window) for the program
         JFrame frame = new JFrame();
         
-        frame.setSize(300 /* x */, 200 /* y */);
+        frame.setSize(800 /* x */, 500 /* y */);
         frame.setTitle("Cityscape");
-        frame.setBackground(Color.blue);
+        frame.setBackground(Color.WHITE);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         
         // a frame contains a single component; create the Cityscape component and add it to the frame
@@ -43,7 +43,7 @@ public class CityscapeViewer
         for( int seconds = 0; seconds < ANIMATION_TIME_IN_SECONDS; seconds++ )
         {
             component.nextFrame();
-            Thread.sleep( 100 );
+            Thread.sleep(50);
         }
         
     }
