@@ -23,15 +23,13 @@ public class CityscapeViewer
         // create and configure the frame (window) for the program
         JFrame frame = new JFrame();
         
-        frame.setSize(800 /* x */, 500 /* y */);
+        frame.setSize(800 /* x */, 600 /* y */);
         frame.setTitle("Cityscape");
-        frame.setBackground(Color.WHITE);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         
         // a frame contains a single component; create the Cityscape component and add it to the frame
         CityscapeComponent component = new CityscapeComponent();
         
-        //frame.add(component);
         frame.add(component);
         
         
@@ -43,9 +41,7 @@ public class CityscapeViewer
         for( int seconds = 0; seconds < ANIMATION_TIME_IN_SECONDS; seconds++ )
         {
             component.nextFrame();
-            Thread.sleep(50);
-        }
-        
+            Thread.sleep(30);
+        } 
     }
-
 }

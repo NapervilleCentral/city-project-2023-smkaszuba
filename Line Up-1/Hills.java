@@ -87,6 +87,5 @@ public class Hills extends JComponent implements Runnable
         System.out.print(x+"-----------------");
         //repaint();
         }
-  
     }
 }
