@@ -2,7 +2,7 @@ import java.awt.*;
 import java.util.*;
 import javax.swing.JComponent;
 
-public class Background extends JComponent
+public class Background extends JComponent implements Runnable
 {
     public void nextFrame()
     {
@@ -19,5 +19,10 @@ public class Background extends JComponent
         page.fillRoundRect(-100,250,350,400,50,50);
         page.fillRoundRect(220,220,300,400,50,50);
         page.fillRoundRect(500,300,300,400,50,50);
+    }
+    
+    public void run()
+    {
+    
     }
 }
