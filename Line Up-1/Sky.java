@@ -48,7 +48,7 @@ public class Sky extends JComponent implements Runnable
             planetColor = Color.white;
         }
         
-        if (theta - 2 * Math.PI < .01)
+        if (theta - 2 * Math.PI > .01)
         {
             theta = 0;
             day = !day;
