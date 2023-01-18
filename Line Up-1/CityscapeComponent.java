@@ -12,18 +12,20 @@ public class CityscapeComponent extends JComponent
 {
     // define the objects in your Cityscape as instance variables
     // ...
-    private Sky sky = new Sky();
+    private SunMoon sunmoon = new SunMoon();
     private Background background = new Background();
+    private Sky sky = new Sky();
+    TiltedTower1 clockTower = new TiltedTower1();
     
     // define the CityscapeComponent contructor and intiailize all instance variables
     // ...
     
     public CityscapeComponent()
     {
-        Thread t1 = new Thread(sky);
-        Thread t2 = new Thread(background);
+        Thread t1 = new Thread(sunmoon);
+        Thread t3 = new Thread(sky);
         t1.start();
-        t2.start();
+        t3.start();
     }
     /**
      * This method is invoked by the Java Run-Time whenever the component needs to be redrawn.
@@ -39,9 +41,10 @@ public class CityscapeComponent extends JComponent
         
         // invoke the draw method on each object in your Cityscape
         // ...
-        sky.drawSky(g2);
-        //background.drawBackground(g2);
-       
+        sky.draw(g2);
+        sunmoon.draw(g2);
+        background.draw(g2);
+        clockTower.draw(g2);
     }
     
     /**
@@ -53,8 +56,8 @@ public class CityscapeComponent extends JComponent
     {
         // update the objects in the cityscape so they are animated
         // ...
-        //background.nextFrame();
         sky.nextFrame();
+        sunmoon.nextFrame();
         
         
         

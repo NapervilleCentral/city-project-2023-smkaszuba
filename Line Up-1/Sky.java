@@ -4,69 +4,53 @@ import javax.swing.JComponent;
 
 public class Sky extends JComponent implements Runnable
 {
-    private double theta;
+    private Color color = Color.cyan;
+    private double red = 0, green = 255, blue = 255;
+    private int count;
     private boolean day = true;
-    private Color sky, planetColor;
     
     public void nextFrame()
     {
         repaint();
     }
     
-    public void drawSky(Graphics2D page)
-    {           
-        page.setColor(sky);
+    public void draw(Graphics2D page)
+    {   
+        page.setColor(new Color((int)red, (int)green, (int)blue));
         page.fillRect(0,0,1920,1080);
-        page.setColor(planetColor);
-        page.fillOval((int)(350 * Math.sin(theta)) + 370, (int)(200 * Math.cos(theta)) + 210, 50, 50);
-    }
-    
-    @Override
-    public void paintComponent(Graphics g)
-    {
-        Graphics2D g2 = (Graphics2D) g;
-
-        // invoke the draw method
-        // ...
-        drawSky(g2);
-
-
     }
     
     public void run()
     {
         while(true)
-        {
-            if (day == true)
-        {
-            sky = Color.cyan;
-            planetColor = Color.yellow;
+        {   
+           if (count >= 750){
+               if (day == true)
+               {
+                    red += .016;
+                    green -= .916;
+                    blue -= .844;
+               }
+               else 
+               {
+                    red -= .016;
+                    green += .916;
+                    blue += .844; 
+               }
+           }
+           
+           if (count >= 1000)
+           {
+                count = 0;
+                day = !day;
+           }
+            
+           ++count;
+           try
+           {
+               Thread.sleep(17);
+           }
+           catch (Exception e){}
         }
-        else
-        {
-            sky = new Color(4, 26, 44);
-            planetColor = Color.white;
-        }
-        
-        if (theta - 2 * Math.PI > .01)
-        {
-            theta = 0;
-            day = !day;
-        }
-        
-        
-        theta -= Math.PI/300;
-        System.out.println(theta);
-        try
-        {
-            Thread.sleep(17);
-        }
-        catch (Exception e){}
-    }
-}
-    
-    public boolean getDay()
-    {
-        return day;
     }
 }
