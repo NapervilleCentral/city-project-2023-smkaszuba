@@ -11,7 +11,12 @@ public class TiltedTower1 extends JComponent
     
     public void draw(Graphics2D page)
     {   
-        page.setColor(new Color(155, 150, 140));
-        page.fillRect(30,100,200,300);
+        page.setColor(new Color(207, 185, 151));
+        page.fillRect(70,200,100,250);
+        page.setColor(new Color(255, 87, 51));
+        page.fillPolygon(new int[] {50, 190, 120}, new int[] {200, 200, 100}, 3);
+        page.fillOval(85,220,70,70);
+        page.setColor(Color.white);
+        page.fillOval(90,225,60,60);
     }
 }

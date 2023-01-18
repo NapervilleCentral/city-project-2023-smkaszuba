@@ -4,9 +4,9 @@ import javax.swing.JComponent;
 
 public class SunMoon extends JComponent implements Runnable
 {
-    private double theta, count;
+    private double theta;
     private boolean day = true;
-    private Color sky, planetColor;
+    private Color planetColor;
     
     public void nextFrame()
     {
@@ -15,7 +15,6 @@ public class SunMoon extends JComponent implements Runnable
     
     public void draw(Graphics2D page)
     {           
-        page.setColor(sky);
         page.fillRect(0,0,1920,1080);
         page.setColor(planetColor);
         page.fillOval((int)(350 * Math.sin(theta)) + 370, (int)(200 * Math.cos(theta)) + 210, 50, 50);
