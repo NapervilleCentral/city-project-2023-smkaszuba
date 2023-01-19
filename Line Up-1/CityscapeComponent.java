@@ -16,6 +16,9 @@ public class CityscapeComponent extends JComponent
     private Background background = new Background();
     private Sky sky = new Sky();
     TiltedTower1 clockTower = new TiltedTower1();
+    TiltedTower2 tower1 = new TiltedTower2();
+    TiltedTower3 tower2 = new TiltedTower3();
+    Jonesy player = new Jonesy();
     
     // define the CityscapeComponent contructor and intiailize all instance variables
     // ...
@@ -45,6 +48,9 @@ public class CityscapeComponent extends JComponent
         sunmoon.draw(g2);
         background.draw(g2);
         clockTower.draw(g2);
+        tower1.draw(g2);
+        tower2.draw(g2);
+        player.draw(g2);
     }
     
     /**

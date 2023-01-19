@@ -17,14 +17,14 @@ public class SunMoon extends JComponent implements Runnable
     {           
         page.fillRect(0,0,1920,1080);
         page.setColor(planetColor);
-        page.fillOval((int)(350 * Math.sin(theta)) + 370, (int)(200 * Math.cos(theta)) + 210, 50, 50);
+        page.fillOval((int)(450 * Math.sin(theta)) + 570, (int)(200 * Math.cos(theta)) + 210, 50, 50);
     }
     
     @Override
     public void paintComponent(Graphics g)
     {
         Graphics2D g2 = (Graphics2D) g;
-        g2.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
+       // g2.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
         // invoke the draw method
         // ...
         draw(g2);

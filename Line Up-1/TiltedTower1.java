@@ -18,5 +18,9 @@ public class TiltedTower1 extends JComponent
         page.fillOval(85,220,70,70);
         page.setColor(Color.white);
         page.fillOval(90,225,60,60);
+        page.setColor(Color.black);
+        page.fillOval(115,250,10,10);
+        page.fillRect(117,252,23,5);
+        page.fillRect(117,252,5,28);
     }
 }
