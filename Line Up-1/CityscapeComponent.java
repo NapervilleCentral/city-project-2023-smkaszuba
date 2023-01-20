@@ -18,7 +18,11 @@ public class CityscapeComponent extends JComponent
     TiltedTower1 clockTower = new TiltedTower1();
     TiltedTower2 tower1 = new TiltedTower2();
     TiltedTower3 tower2 = new TiltedTower3();
-    Jonesy player = new Jonesy();
+    Jonesy player1 = new Jonesy();
+    Jonesy player2 = new Jonesy();
+    Jonesy player3 = new Jonesy();
+    Jonesy player4 = new Jonesy();
+    Jonesy player5 = new Jonesy();
     
     // define the CityscapeComponent contructor and intiailize all instance variables
     // ...
@@ -26,9 +30,19 @@ public class CityscapeComponent extends JComponent
     public CityscapeComponent()
     {
         Thread t1 = new Thread(sunmoon);
-        Thread t3 = new Thread(sky);
+        Thread t2 = new Thread(sky);
+        Thread t3 = new Thread(player1);
+        Thread t4 = new Thread(player2);
+        Thread t5 = new Thread(player3);
+        Thread t6 = new Thread(player4);
+        Thread t7 = new Thread(player5);
         t1.start();
+        t2.start();
         t3.start();
+        t4.start();
+        t5.start();
+        t6.start();
+        t7.start();
     }
     /**
      * This method is invoked by the Java Run-Time whenever the component needs to be redrawn.
@@ -50,7 +64,11 @@ public class CityscapeComponent extends JComponent
         clockTower.draw(g2);
         tower1.draw(g2);
         tower2.draw(g2);
-        player.draw(g2);
+        player1.draw(g2);
+        player2.draw(g2);
+        player3.draw(g2);
+        player4.draw(g2);
+        player5.draw(g2);
     }
     
     /**
@@ -64,8 +82,11 @@ public class CityscapeComponent extends JComponent
         // ...
         sky.nextFrame();
         sunmoon.nextFrame();
-        
-        
+        player1.nextFrame();
+        player2.nextFrame();
+        player3.nextFrame();
+        player4.nextFrame();
+        player5.nextFrame();
         
         // request that the Java Runtime repaints this component by invoking its paintComponent method
         //  do not explicitly invoke the paintComponent method
