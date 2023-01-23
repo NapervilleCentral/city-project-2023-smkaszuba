@@ -7,22 +7,28 @@ import java.awt.image.BufferedImage;
 
 public class Jonesy extends JComponent implements Runnable
 {
-    private int x, y = -30, w, h, a, p;
+    private int x, y = -30, a, p;
     private double theta;
     private static Random random = new Random();
     private BufferedImage jonesy;
+    private Rectangle clockTower, jonesyCoords, road;
+    private Polygon clockTowerRoof;
     
-    public Jonesy()
+    public Jonesy(Rectangle hitbox1, Polygon hitbox2, Rectangle hitbox3)
     {
         try
         {
-            jonesy = ImageIO.read(new File("banan.png"));   
+            jonesy = ImageIO.read(new File("banan.png"));
+            jonesyCoords = new Rectangle(x, y, 30, 30);
         }
         catch(IOException e) {}
         
-        x = (int) random.nextInt(500) + 200;
+        x = (int) random.nextInt(1000);
         a = (int) random.nextInt(200) - 100;
-        p = (int) random.nextInt(10);
+        p = (int) random.nextInt(15) - 5;
+        clockTower = hitbox1;
+        clockTowerRoof = hitbox2;
+        road = hitbox3;
     }
     
     @Override
@@ -45,22 +51,31 @@ public class Jonesy extends JComponent implements Runnable
     
     public void run()
     {
+        try
+        {    
+            Thread.sleep(random.nextInt(3000));
+        }
+        catch (Exception e){}
         while(true)
         {  
-            //if (page.hitClip(70,200,100,250))
-            //{
-            //    x = 10;
-            //    y = 10;
-           // }
-            //else
-           // {
-           //     ++y;
-           //     theta += Math.PI/200;
-           // }
-            ++y;
+            if (clockTower.intersects(jonesyCoords) ||
+                road.intersects(jonesyCoords))
+            {
+                try
+            {    
+            Thread.sleep(1000);
+            }
+            catch (Exception e){}
+            x = (int) random.nextInt(1000);
+            y = -30;             
+            }
+            else
+            {
+                ++y;
                 theta += Math.PI/200;
+            }
             
-            
+            jonesyCoords = new Rectangle(x, y, 30, 30);
             try
                {    
                    Thread.sleep(17);

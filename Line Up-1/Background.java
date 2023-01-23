@@ -31,4 +31,9 @@ public class Background extends JComponent
         page.fillRect(800,495,75,20);
         page.fillRect(930,495,75,20);
     }
+    
+    public Rectangle getRoad()
+    {
+        return new Rectangle(0,450,1000,200);
+    }
 }

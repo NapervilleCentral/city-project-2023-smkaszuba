@@ -1,6 +1,7 @@
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import javax.swing.JComponent;
+import java.awt.*;
 /**
  * Class that creates instances of the classes that comprise the cityscape and delegates drawing the
  *  cityscape to these object.
@@ -15,14 +16,16 @@ public class CityscapeComponent extends JComponent
     private SunMoon sunmoon = new SunMoon();
     private Background background = new Background();
     private Sky sky = new Sky();
-    TiltedTower1 clockTower = new TiltedTower1();
-    TiltedTower2 tower1 = new TiltedTower2();
-    TiltedTower3 tower2 = new TiltedTower3();
-    Jonesy player1 = new Jonesy();
-    Jonesy player2 = new Jonesy();
-    Jonesy player3 = new Jonesy();
-    Jonesy player4 = new Jonesy();
-    Jonesy player5 = new Jonesy();
+    private TiltedTower1 clockTower = new TiltedTower1();
+    private TiltedTower2 tower1 = new TiltedTower2();
+    private TiltedTower3 tower2 = new TiltedTower3();
+    private Polygon clockTowerRoof = clockTower.getRoof();
+    private Rectangle clockTowerTop = clockTower.getTower(), road = background.getRoad();
+    private Jonesy player1 = new Jonesy(clockTowerTop, clockTowerRoof, road);
+    private Jonesy player2 = new Jonesy(clockTowerTop, clockTowerRoof, road);
+    private Jonesy player3 = new Jonesy(clockTowerTop, clockTowerRoof, road);
+    private Jonesy player4 = new Jonesy(clockTowerTop, clockTowerRoof, road);
+    private Jonesy player5 = new Jonesy(clockTowerTop, clockTowerRoof, road);
     
     // define the CityscapeComponent contructor and intiailize all instance variables
     // ...
