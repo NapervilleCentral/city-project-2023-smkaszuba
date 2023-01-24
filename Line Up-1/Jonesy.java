@@ -12,10 +12,10 @@ public class Jonesy extends JComponent implements Runnable
     private boolean hit = false;
     private static Random random = new Random();
     private BufferedImage jonesy;
-    private Rectangle clockTower, jonesyCoords, road;
+    private Rectangle clockTower, jonesyCoords, road, roof1, roof2, roof3;
     private Polygon clockTowerRoof;
     
-    public Jonesy(Rectangle hitbox1, Polygon hitbox2, Rectangle hitbox3)
+    public Jonesy(Rectangle hitbox1, Polygon hitbox2, Rectangle hitbox3, Rectangle hitbox4, Rectangle hitbox5, Rectangle hitbox6)
     {
         try
         {
@@ -30,6 +30,9 @@ public class Jonesy extends JComponent implements Runnable
         clockTower = hitbox1;
         clockTowerRoof = hitbox2;
         road = hitbox3;
+        roof1 = hitbox4;
+        roof2 = hitbox5;
+        roof3 = hitbox6;
     }
     
     @Override
@@ -49,24 +52,7 @@ public class Jonesy extends JComponent implements Runnable
     {   
         page.drawImage(jonesy, (int) (a * Math.sin(theta * p)) + x, y, 30, 30, null);
     }
-    
-    public void explosion(Graphics2D page)
-    {
-        try
-        {    
-            Thread.sleep(50);
-        }
-        catch (Exception e){}
-        page.setColor(Color.yellow);
-        page.drawOval(x,y,50,50);
-        try
-        {    
-            Thread.sleep(50);
-        }
-        catch (Exception e){}
-        page.setColor(Color.orange);
-        page.drawOval(x,y,50,50);
-    }
+
     
     public void run()
     {
@@ -78,15 +64,20 @@ public class Jonesy extends JComponent implements Runnable
         while(true)
         {  
             if (clockTower.intersects(jonesyCoords) ||
-                road.intersects(jonesyCoords))
+                road.intersects(jonesyCoords) ||
+                roof1.intersects(jonesyCoords) ||
+                roof2.intersects(jonesyCoords) ||
+                roof3.intersects(jonesyCoords))
             {
+                try
+               {    
+                   Thread.sleep(1000);
+               }
+               catch (Exception e){}
+                
                 x = (int) random.nextInt(1000);
                 y = -30;
                 
-                for (int i = 0; i < 10; i++)
-                {
-                    explosion();
-                }
             }
             else
             {
