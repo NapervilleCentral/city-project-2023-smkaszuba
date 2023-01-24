@@ -12,10 +12,10 @@ public class Jonesy extends JComponent implements Runnable
     private boolean hit = false;
     private static Random random = new Random();
     private BufferedImage jonesy;
-    private Rectangle clockTower, jonesyCoords, road, roof1, roof2, roof3;
+    private Rectangle clockTower, jonesyCoords, road, roof1, roof2, roof3, roof4;
     private Polygon clockTowerRoof;
     
-    public Jonesy(Rectangle hitbox1, Polygon hitbox2, Rectangle hitbox3, Rectangle hitbox4, Rectangle hitbox5, Rectangle hitbox6)
+    public Jonesy(Rectangle hitbox1, Polygon hitbox2, Rectangle hitbox3, Rectangle hitbox4, Rectangle hitbox5, Rectangle hitbox6, Rectangle hitbox7)
     {
         try
         {
@@ -33,6 +33,7 @@ public class Jonesy extends JComponent implements Runnable
         roof1 = hitbox4;
         roof2 = hitbox5;
         roof3 = hitbox6;
+        roof4 = hitbox7;
     }
     
     @Override
@@ -67,7 +68,8 @@ public class Jonesy extends JComponent implements Runnable
                 road.intersects(jonesyCoords) ||
                 roof1.intersects(jonesyCoords) ||
                 roof2.intersects(jonesyCoords) ||
-                roof3.intersects(jonesyCoords))
+                roof3.intersects(jonesyCoords) ||
+                roof4.intersects(jonesyCoords))
             {
                 try
                {    

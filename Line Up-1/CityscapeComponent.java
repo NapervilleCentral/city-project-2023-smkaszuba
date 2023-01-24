@@ -21,12 +21,13 @@ public class CityscapeComponent extends JComponent
     private TiltedTower3 tower2 = new TiltedTower3();
     private Polygon clockTowerRoof = clockTower.getRoof();
     private Rectangle clockTowerTop = clockTower.getTower(), road = background.getRoad(),
-            roof1 = tower1.getRoof1(), roof2 = tower1.getRoof2(), roof3 = tower1.getRoof3();
-    private Jonesy player1 = new Jonesy(clockTowerTop, clockTowerRoof, road, roof1, roof2, roof3);
-    private Jonesy player2 = new Jonesy(clockTowerTop, clockTowerRoof, road, roof1, roof2, roof3);
-    private Jonesy player3 = new Jonesy(clockTowerTop, clockTowerRoof, road, roof1, roof2, roof3);
-    private Jonesy player4 = new Jonesy(clockTowerTop, clockTowerRoof, road, roof1, roof2, roof3);
-    private Jonesy player5 = new Jonesy(clockTowerTop, clockTowerRoof, road, roof1, roof2, roof3);
+            roof1 = tower1.getRoof1(), roof2 = tower1.getRoof2(), roof3 = tower1.getRoof3(),
+            roof4 = tower2.getRoof();
+    private Jonesy player1 = new Jonesy(clockTowerTop, clockTowerRoof, road, roof1, roof2, roof3, roof4);
+    private Jonesy player2 = new Jonesy(clockTowerTop, clockTowerRoof, road, roof1, roof2, roof3, roof4);
+    private Jonesy player3 = new Jonesy(clockTowerTop, clockTowerRoof, road, roof1, roof2, roof3, roof4);
+    private Jonesy player4 = new Jonesy(clockTowerTop, clockTowerRoof, road, roof1, roof2, roof3, roof4);
+    private Jonesy player5 = new Jonesy(clockTowerTop, clockTowerRoof, road, roof1, roof2, roof3, roof4);
     
     // define the CityscapeComponent contructor and intiailize all instance variables
     // ...
@@ -69,10 +70,10 @@ public class CityscapeComponent extends JComponent
         tower1.draw(g2);
         tower2.draw(g2);
         player1.draw(g2);
-        //player2.draw(g2);
-        //player3.draw(g2);
-        //player4.draw(g2);
-        //player5.draw(g2);
+        player2.draw(g2);
+        player3.draw(g2);
+        player4.draw(g2);
+        player5.draw(g2);
     }
     
     /**
