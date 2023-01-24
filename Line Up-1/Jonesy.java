@@ -7,8 +7,9 @@ import java.awt.image.BufferedImage;
 
 public class Jonesy extends JComponent implements Runnable
 {
-    private int x, y = -30, a, p;
+    private int x, y = -30, a, p, count;
     private double theta;
+    private boolean hit = false;
     private static Random random = new Random();
     private BufferedImage jonesy;
     private Rectangle clockTower, jonesyCoords, road;
@@ -49,6 +50,24 @@ public class Jonesy extends JComponent implements Runnable
         page.drawImage(jonesy, (int) (a * Math.sin(theta * p)) + x, y, 30, 30, null);
     }
     
+    public void explosion(Graphics2D page)
+    {
+        try
+        {    
+            Thread.sleep(50);
+        }
+        catch (Exception e){}
+        page.setColor(Color.yellow);
+        page.drawOval(x,y,50,50);
+        try
+        {    
+            Thread.sleep(50);
+        }
+        catch (Exception e){}
+        page.setColor(Color.orange);
+        page.drawOval(x,y,50,50);
+    }
+    
     public void run()
     {
         try
@@ -61,13 +80,13 @@ public class Jonesy extends JComponent implements Runnable
             if (clockTower.intersects(jonesyCoords) ||
                 road.intersects(jonesyCoords))
             {
-                try
-            {    
-            Thread.sleep(1000);
-            }
-            catch (Exception e){}
-            x = (int) random.nextInt(1000);
-            y = -30;             
+                x = (int) random.nextInt(1000);
+                y = -30;
+                
+                for (int i = 0; i < 10; i++)
+                {
+                    explosion();
+                }
             }
             else
             {
