@@ -28,6 +28,7 @@ public class CityscapeComponent extends JComponent
     private Jonesy player3 = new Jonesy(clockTowerTop, clockTowerRoof, road, roof1, roof2, roof3, roof4);
     private Jonesy player4 = new Jonesy(clockTowerTop, clockTowerRoof, road, roof1, roof2, roof3, roof4);
     private Jonesy player5 = new Jonesy(clockTowerTop, clockTowerRoof, road, roof1, roof2, roof3, roof4);
+    private Window window = new Window();
     
     // define the CityscapeComponent contructor and intiailize all instance variables
     // ...
@@ -41,6 +42,8 @@ public class CityscapeComponent extends JComponent
         Thread t5 = new Thread(player3);
         Thread t6 = new Thread(player4);
         Thread t7 = new Thread(player5);
+        Thread t8 = new Thread(window);
+
         t1.start();
         t2.start();
         t3.start();
@@ -48,6 +51,7 @@ public class CityscapeComponent extends JComponent
         t5.start();
         t6.start();
         t7.start();
+        t8.start();
     }
     /**
      * This method is invoked by the Java Run-Time whenever the component needs to be redrawn.
@@ -74,6 +78,7 @@ public class CityscapeComponent extends JComponent
         player3.draw(g2);
         player4.draw(g2);
         player5.draw(g2);
+        window.draw(g2);
     }
     
     /**
@@ -92,6 +97,7 @@ public class CityscapeComponent extends JComponent
         player3.nextFrame();
         player4.nextFrame();
         player5.nextFrame();
+        window.nextFrame();
         
         // request that the Java Runtime repaints this component by invoking its paintComponent method
         //  do not explicitly invoke the paintComponent method
