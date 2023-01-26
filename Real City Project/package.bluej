@@ -14,6 +14,7 @@ dependency4.type=UsesDependency
 dependency5.from=CityscapeComponent
 dependency5.to=TiltedTower1
 dependency5.type=UsesDependency
+<<<<<<< HEAD:Real City Project/package.bluej
 dependency6.from=CityscapeComponent
 dependency6.to=TiltedTower2
 dependency6.type=UsesDependency
@@ -30,18 +31,29 @@ editor.fx.0.height=739
 editor.fx.0.width=816
 editor.fx.0.x=1163
 editor.fx.0.y=118
+=======
+editor.fx.0.height=0
+editor.fx.0.width=0
+editor.fx.0.x=0
+editor.fx.0.y=0
+>>>>>>> 6d14a3148e3bf584a5507b5541be0e473993a9cd:Line Up-1/package.bluej
 objectbench.height=95
-objectbench.width=553
+objectbench.width=930
 package.divider.horizontal=0.5995717344753747
-package.divider.vertical=0.8720200752823086
-package.editor.height=688
+package.divider.vertical=0.8934169278996865
+package.editor.height=848
 package.editor.width=840
-package.editor.x=819
-package.editor.y=114
-package.frame.height=897
+package.editor.x=0
+package.editor.y=0
+package.frame.height=1057
 package.frame.width=970
+<<<<<<< HEAD:Real City Project/package.bluej
 package.numDependencies=9
 package.numTargets=10
+=======
+package.numDependencies=5
+package.numTargets=9
+>>>>>>> 6d14a3148e3bf584a5507b5541be0e473993a9cd:Line Up-1/package.bluej
 package.showExtends=true
 package.showUses=true
 project.charset=UTF-8
@@ -55,7 +67,7 @@ target1.name=Sky
 target1.showInterface=false
 target1.type=ClassTarget
 target1.width=120
-target1.x=460
+target1.x=450
 target1.y=310
 target10.height=50
 target10.name=CityscapeComponent
@@ -70,10 +82,18 @@ target2.name=TiltedTower3
 target2.showInterface=false
 target2.type=ClassTarget
 target2.width=120
+<<<<<<< HEAD:Real City Project/package.bluej
 target2.x=460
 target2.y=150
 target3.height=70
 target3.name=Window
+=======
+target2.x=130
+target2.y=10
+target3.height=50
+target3.name=CityscapeViewer
+target3.naviview.expanded=false
+>>>>>>> 6d14a3148e3bf584a5507b5541be0e473993a9cd:Line Up-1/package.bluej
 target3.showInterface=false
 target3.type=ClassTarget
 target3.width=120
@@ -84,39 +104,67 @@ target4.name=CityscapeViewer
 target4.naviview.expanded=false
 target4.showInterface=false
 target4.type=ClassTarget
+<<<<<<< HEAD:Real City Project/package.bluej
 target4.width=130
 target4.x=350
 target4.y=470
+=======
+target4.width=120
+target4.x=270
+target4.y=230
+>>>>>>> 6d14a3148e3bf584a5507b5541be0e473993a9cd:Line Up-1/package.bluej
 target5.height=70
 target5.name=TiltedTower1
 target5.showInterface=false
 target5.type=ClassTarget
 target5.width=120
+<<<<<<< HEAD:Real City Project/package.bluej
 target5.x=260
 target5.y=230
+=======
+target5.x=270
+target5.y=310
+>>>>>>> 6d14a3148e3bf584a5507b5541be0e473993a9cd:Line Up-1/package.bluej
 target6.height=70
 target6.name=SunMoon
 target6.showInterface=false
 target6.type=ClassTarget
 target6.width=120
+<<<<<<< HEAD:Real City Project/package.bluej
 target6.x=260
 target6.y=310
+=======
+target6.x=10
+target6.y=90
+>>>>>>> 6d14a3148e3bf584a5507b5541be0e473993a9cd:Line Up-1/package.bluej
 target7.height=70
 target7.name=TiltedTower2
 target7.showInterface=false
 target7.type=ClassTarget
 target7.width=120
+<<<<<<< HEAD:Real City Project/package.bluej
 target7.x=260
 target7.y=150
+=======
+target7.x=450
+target7.y=230
+>>>>>>> 6d14a3148e3bf584a5507b5541be0e473993a9cd:Line Up-1/package.bluej
 target8.height=70
 target8.name=Background
 target8.showInterface=false
 target8.type=ClassTarget
 target8.width=120
 target8.x=460
+<<<<<<< HEAD:Real City Project/package.bluej
 target8.y=230
 target9.height=70
 target9.name=Jonesy
+=======
+target8.y=150
+target9.height=50
+target9.name=CityscapeComponent
+target9.naviview.expanded=false
+>>>>>>> 6d14a3148e3bf584a5507b5541be0e473993a9cd:Line Up-1/package.bluej
 target9.showInterface=false
 target9.type=ClassTarget
 target9.width=120
